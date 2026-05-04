@@ -47,14 +47,14 @@
 | `run_hermes()` | noah.py:156-182 | 工具执行依赖 Hermes CLI | 胚胎阶段暂不需要工具执行（纯对话+观察），可移除 |
 | `router-brain.py` 动态导入 | noah_core.py:203-241 | 0.5B路由分类 | 有兜底逻辑（降级到 quick_route），可移除 |
 | LanceDB | storage.py | 矢量存储 | 可降级为纯SQLite模式 |
-| 广州同步 | storage.py | 远程推送 | 初期不需要，可移除 |
+| 卢修斯同步 | storage.py | 远程推送 | 初期不需要，可移除 |
 
 ### 2.2 可复用组件清单
 
 | 组件 | 行数 | 依赖 | 复用方式 |
 |:----|:---:|:-----|:---------|
 | `noah_core.py` | 912 | 无外部（只调 subprocess + re） | 直接复制+精简router-brain引用 |
-| `storage.py` | 409 | LanceDB(可选) + httpx(LLM嵌入) | 复制+使LanceDB可选+移除广州同步 |
+| `storage.py` | 409 | LanceDB(可选) + httpx(LLM嵌入) | 复制+使LanceDB可选+移除卢修斯同步 |
 | `scheduler.py` | 422 | Ollama(可选) + DeepSeek API | 复制+使Ollama可选 |
 | `lightweight-db.py` | 186 | 纯stdlib (sqlite3) | **直接复制，零改动** |
 | `recent-memory.py` | 331 | 纯stdlib (json) | 直接复制 |
@@ -71,7 +71,7 @@
 | `dual-router.py` | 已废弃 |
 | `hooks.py` | 工厂级超重，胚胎阶段用简化版 |
 | `auto-skill.py` | 发育阶段功能 |
-| `sync-to-guangzhou.py` | 远程同步 |
+| `sync-to-lucius.py` | 远程同步 |
 
 ---
 
@@ -240,7 +240,7 @@ start.sh
 | 单用户 REPL/Web | 多角色户籍 | `router.py` 中 `identity` 参数预留 |
 | 无工具执行 | Hermes 工具引擎/子进程 | `engine.py` 中 `execute_tool()` 插槽预留 |
 | 单实例 | 多实例协作 | 对话ID + session 隔离已设计 |
-| 本地 only | 广州远程同步 | `storage/sync.py` 接口预留(无实现) |
+| 本地 only | 远程卢修斯同步 | `storage/sync.py` 接口预留(无实现) |
 
 ### 5.2 代码级接口设计原则
 
@@ -323,7 +323,7 @@ class OllamaBackend(LLMBackend):
 | 维度 | 现有 noah-factory | 胚胎 noah-embryo |
 |:-----|:-----------------|:-----------------|
 | 代码量 | ~6700 行(.py) + Shell | ~1650 行 |
-| 依赖 | Hermes CLI + LanceDB + Ollama + 广州服务器 | Python stdlib + httpx + LLM API |
+| 依赖 | Hermes CLI + LanceDB + Ollama + 卢修斯数据神殿 | Python stdlib + httpx + LLM API |
 | 历史债务 | dual-router废弃、emotional-brain幽灵引用 | 零 |
 | 工具执行 | Hermes 代理 | 预留接口，暂无实现 |
 | 矢量检索 | LanceDB 10表 | 预留接口，发育阶段加 |
