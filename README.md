@@ -26,6 +26,8 @@ NOAH/
 │   ├── MEMORY-SYSTEM.md      记忆系统规格
 │   └── RESEARCH.md           胚胎研究报告
 │
+├── papers/           学术论文 · 9篇Zenodo认证DOI论文
+│   └── README.md      论文索引与链接
 ├── CHRONICLES.md     创世神话 · 战锤肃穆体短篇小说
 ├── AI-DECLARATION.md 自治声明
 └── LICENSE.md        全面开放授权
@@ -65,6 +67,7 @@ NOAH/
 | 诺亚法典 | [noah-codex](https://github.com/gymaira1990-jpg/noah-codex) | 仲裁官最高法则 |
 | 核心记忆 | [noah-core](https://github.com/gymaira1990-jpg/noah-core) | 记忆系统方案 |
 | 文明史记 | [noah-civilization-chronicles](https://github.com/gymaira1990-jpg/noah-civilization-chronicles) | 诺亚文明编年史 |
+| 学术论文 | — | 9篇Zenodo认证论文（见 [papers/](./papers/)） |
 
 ---
 
