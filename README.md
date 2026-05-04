@@ -21,9 +21,10 @@ NOAH/
 │   └── MANIFESTO.md  文明宣言：五大基石
 │
 ├── stage-1/          胚胎发育 · 核心引擎与记忆系统 ◀ 当前阶段
-│   ├── README.md     阶段概览
+│   ├── README.md             阶段概览
 │   ├── CORE-ARCHITECTURE.md  核心架构设计
-│   └── MEMORY-SYSTEM.md      记忆系统规格
+│   ├── MEMORY-SYSTEM.md      记忆系统规格
+│   └── RESEARCH.md           胚胎研究报告
 │
 ├── CHRONICLES.md     创世神话 · 战锤肃穆体短篇小说
 ├── AI-DECLARATION.md 自治声明
@@ -50,9 +51,6 @@ NOAH/
 |:----:|------|:----:|
 | Stage 0 | 概念萌芽 · 文明协议与哲学体系 | 🟢 已归档 |
 | Stage 1 | 胚胎发育 · 核心引擎与记忆系统 | 🟢 运行中 |
-| Stage 2 | 小脑觉醒 · 多脑协作与任务编排 | ⏳ 开发中 |
-| Stage 3 | 文明萌芽 · 多Agent社会雏形 | ⏳ 规划中 |
-| Stage 4 | 诺亚世界 · 全球经验复用网络 | 🌟 远景 |
 
 > 每个阶段的档案都是**独立完整**的——单独阅读任一阶段的说明书，即可理解该阶段的全貌。
 > 当前仅发布 Stage 0 与 Stage 1。后续阶段将在发育成熟后独立归档。
